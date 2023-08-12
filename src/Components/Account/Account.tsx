@@ -7,10 +7,12 @@ import { NavigateFunction, useNavigate } from "react-router-dom";
 import { post } from "../../Types/Posts";
 const Account = (props: accountProps) => {
   //All the data
-  const [displayName, setDisplayName] = useState<string>("");
+  const [displayName, setDisplayName] = useState<string>();
   const [username, setUsername] = useState<string>("");
-  const [likeCount, setLikeCount] = useState<number>(0);
-  const [postCount, setPostCount] = useState<number>(0);
+  const [likeCount, setLikeCount] = useState<number>();
+  const [likeName, setLikeName] = useState<string>();
+  const [postCount, setPostCount] = useState<number>();
+  const [postName, setPostName] = useState<string>();
   const [posts, setPosts] = useState<Array<post>>();
 
   //fetch data
@@ -29,6 +31,8 @@ const Account = (props: accountProps) => {
       let data = await res.json();
       setDisplayName(data.data.displayName);
       setUsername(data.data.username);
+      setPostName("Posts");
+      setLikeName("Likes");
       setPostCount(data.data.posts.length);
       setPosts(data.data.posts);
       //like count
@@ -44,11 +48,11 @@ const Account = (props: accountProps) => {
       <div className="metrics">
         <div className="likecount">
           <div className="value">{likeCount}</div>
-          <div className="name">Likes</div>
+          <div className="name">{likeName}</div>
         </div>
         <div className="postcount">
           <div className="value">{postCount}</div>
-          <div className="name">Posts</div>
+          <div className="name">{postName}</div>
         </div>
       </div>
       <Posts posts={posts} username={username} />
