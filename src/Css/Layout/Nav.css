@@ -1,0 +1,23 @@
+.nav {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0px 10px 20px;
+  border-right: 1px solid #676767;
+}
+.nav > .logo {
+  height: 70px;
+  width: 70px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+  .nav {
+    padding: 10px 0px 10px 10px;
+  }
+  .nav > .logo {
+    height: 60px;
+    width: 60px;
+    margin-left: -11px;
+  }
+}

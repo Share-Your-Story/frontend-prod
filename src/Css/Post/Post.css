@@ -1,0 +1,93 @@
+.post {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  border: 1px solid #676767;
+  padding: 15px 20px;
+  border-radius: 15px;
+  word-wrap: break-word;
+}
+
+.post > .header1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.post > .header1 > .title {
+  font-weight: 500;
+  font-size: 19px;
+}
+.post > .header1 > .likes {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 19px;
+  cursor: pointer;
+}
+.post > .header1 > .likes > img {
+  height: 25px;
+}
+.post > .header1 > .likes > .light {
+  color: #676767;
+}
+.post > .header1 > .likes > .dark {
+  color: #000;
+}
+
+.post > .header2 {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.post > .header2 > .author,
+.post > .header2 > .date {
+  color: #676767;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.post > .body {
+  font-size: 18px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .post {
+    width: 80%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .post {
+    width: 90%;
+  }
+}
+@media only screen and (max-width: 525px) {
+  .post {
+    padding: 5px 10px;
+    border-radius: 10px;
+    word-wrap: break-word;
+  }
+  .post > .header1 > .title {
+    font-weight: 500;
+    font-size: 14px;
+  }
+  .post > .header1 > .likes {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  .post > .header1 > .likes > img {
+    height: 20px;
+  }
+  .post > .header2 {
+    margin-bottom: 5px;
+  }
+  .post > .header2 > .author,
+  .post > .header2 > .date {
+    font-size: 10px;
+  }
+  .post > .body {
+    font-size: 12px;
+  }
+}

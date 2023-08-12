@@ -1,0 +1,82 @@
+.loginregister {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+.loginregister > .header {
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+.loginregister > .status {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  text-align: center;
+  color: red;
+}
+.loginregister > input {
+  width: 50%;
+  padding: 5px 10px;
+  outline: 0;
+  border: 1px solid #676767;
+  background-color: rgba(0, 0, 0, 0);
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+.loginregister > .submit {
+  margin-top: 20px;
+  outline: 0;
+  border: 2px solid #000000;
+  color: #000000;
+  font-weight: 500;
+  background-color: rgba(0, 0, 0, 0);
+  padding: 5.5px 20px;
+  font-size: 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.loginregister > .submit:hover {
+  padding: 5.5px 70px;
+  letter-spacing: 2px;
+}
+.loginregister > .change {
+  display: flex;
+  gap: 5px;
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: 500;
+}
+.loginregister > .change > .link {
+  text-decoration: none;
+  color: #0099ff;
+}
+.loginregister > .change > .link:hover {
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 1000px) {
+  .loginregister > input {
+    width: 70%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .loginregister > input {
+    width: 80%;
+    padding: 2px 5px;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .loginregister > input {
+    width: 90%;
+    padding: 0px 5px;
+    font-size: 18px;
+  }
+  .loginregister > .change {
+    font-size: 14px;
+  }
+}

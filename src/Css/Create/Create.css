@@ -1,0 +1,71 @@
+.create {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.create > .header {
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+}
+
+.create > .status {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  text-align: center;
+  color: red;
+}
+
+.create > .title,
+.create > .desc {
+  width: 60%;
+  padding: 5px;
+  outline: 0;
+  border: 1px solid #676767;
+  background-color: rgba(0, 0, 0, 0);
+  margin-bottom: 10px;
+}
+.create > .title {
+  font-size: 24px;
+}
+.create > .desc {
+  font-size: 20px;
+  resize: vertical;
+  height: 50%;
+  margin-bottom: 30px;
+}
+
+.create > .upload {
+  outline: 0;
+  border: 2px solid #000000;
+  color: #000000;
+  font-weight: 500;
+  background-color: rgba(0, 0, 0, 0);
+  padding: 7.5px 24px;
+  font-size: 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.create > .upload:hover {
+  padding: 7.5px 100px;
+  letter-spacing: 2px;
+}
+
+@media only screen and (max-width: 525px) {
+  .create > .title,
+  .create > .desc {
+    width: 85%;
+    padding: 0px 5px;
+  }
+  .create > .title {
+    font-size: 18px;
+  }
+  .create > .desc {
+    font-size: 14px;
+  }
+}

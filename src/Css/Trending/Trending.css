@@ -1,0 +1,11 @@
+/* Hide scrollbar for IE, Edge and Firefox */
+.trending {
+  overflow-y: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.trending::-webkit-scrollbar {
+  display: none;
+}
