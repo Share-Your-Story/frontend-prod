@@ -11,6 +11,14 @@ const Nav = () => {
       <NavItem name="trending" />
       <NavItem name="create" />
       <NavItem name="account" />
+      <div className="credits">
+        <div className="creator">
+          <a href="https://github.com/AayushMainali-Github">Creator</a>
+        </div>
+        <div className="icons">
+          <a href="https://icons8.com/">Icons</a>
+        </div>
+      </div>
     </nav>
   );
 };

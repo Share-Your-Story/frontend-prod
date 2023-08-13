@@ -32,20 +32,24 @@ const Post = (props: postProps) => {
     if (liked) return;
 
     //update database
-    const res = await fetch(`${api}/post/like`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        _id: props._id,
-      }),
-      credentials: "include",
-    });
-    if (res.status === 401) navigate("/account/register");
-    else if (res.status !== 200) return;
-    setLiked(true);
-    setLikes(likes + 1);
+    try {
+      const res = await fetch(`${api}/post/like`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          _id: props._id,
+        }),
+        credentials: "include",
+      });
+      if (res.status === 401) navigate("/account/register");
+      else if (res.status !== 200) return;
+      setLiked(true);
+      setLikes(likes + 1);
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   return (

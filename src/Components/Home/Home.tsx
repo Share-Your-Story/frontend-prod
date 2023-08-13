@@ -12,16 +12,20 @@ const Home = () => {
   const navigate: NavigateFunction = useNavigate();
   useEffect(() => {
     (async () => {
-      const res = await fetch(`${api}/post/home`, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        credentials: "include",
-      });
-      let data = await res.json();
-      setUsername(data.data.username);
-      setPosts(data.data.posts);
+      try {
+        const res = await fetch(`${api}/post/home`, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          credentials: "include",
+        });
+        let data = await res.json();
+        setUsername(data.data.username);
+        setPosts(data.data.posts);
+      } catch (e) {
+        console.log(e);
+      }
     })();
   }, [navigate]);
 

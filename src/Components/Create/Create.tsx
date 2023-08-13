@@ -12,22 +12,26 @@ const Create = () => {
   const navigate: NavigateFunction = useNavigate();
   const post = async (e: FormEvent) => {
     e.preventDefault();
-    const res = await fetch(`${api}/post`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        title,
-        body: description,
-      }),
-      credentials: "include",
-    });
-    if (res.status === 200) navigate("/account");
-    else if (res.status === 401) navigate("/account/login");
-    else {
-      let data: { code: number; message: string } = await res.json();
-      setStatus(data.message);
+    try {
+      const res = await fetch(`${api}/post`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          title,
+          body: description,
+        }),
+        credentials: "include",
+      });
+      if (res.status === 200) navigate("/account");
+      else if (res.status === 401) navigate("/account/login");
+      else {
+        let data: { code: number; message: string } = await res.json();
+        setStatus(data.message);
+      }
+    } catch (e) {
+      console.log(e);
     }
   };
 

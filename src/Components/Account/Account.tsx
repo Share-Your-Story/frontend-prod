@@ -18,28 +18,32 @@ const Account = (props: accountProps) => {
   //fetch data
   const navigate: NavigateFunction = useNavigate();
   useEffect(() => {
-    (async () => {
-      const res = await fetch(`${api}/user/account`, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        credentials: "include",
-      });
-      if (res.status === 401) return navigate("/account/register");
+    try {
+      (async () => {
+        const res = await fetch(`${api}/user/account`, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          credentials: "include",
+        });
+        if (res.status === 401) return navigate("/account/register");
 
-      let data = await res.json();
-      setDisplayName(data.data.displayName);
-      setUsername(data.data.username);
-      setPostName("Posts");
-      setLikeName("Likes");
-      setPostCount(data.data.posts.length);
-      setPosts(data.data.posts);
-      //like count
-      let totalLikes: number = 0;
-      data.data.posts.forEach((e: { likes: number }) => (totalLikes += e.likes));
-      setLikeCount(totalLikes);
-    })();
+        let data = await res.json();
+        setDisplayName(data.data.displayName);
+        setUsername(data.data.username);
+        setPostName("Posts");
+        setLikeName("Likes");
+        setPostCount(data.data.posts.length);
+        setPosts(data.data.posts);
+        //like count
+        let totalLikes: number = 0;
+        data.data.posts.forEach((e: { likes: number }) => (totalLikes += e.likes));
+        setLikeCount(totalLikes);
+      })();
+    } catch (e) {
+      console.log(e);
+    }
   }, [navigate]);
   return (
     <div className="account">

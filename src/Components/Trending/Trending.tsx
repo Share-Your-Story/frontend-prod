@@ -10,19 +10,24 @@ const Trending = () => {
   const [posts, setPosts] = useState<Array<post>>();
   //fetch data
   const navigate: NavigateFunction = useNavigate();
+
   useEffect(() => {
-    (async () => {
-      const res = await fetch(`${api}/post/trending`, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        credentials: "include",
-      });
-      let data = await res.json();
-      setUsername(data.data.username);
-      setPosts(data.data.posts);
-    })();
+    try {
+      (async () => {
+        const res = await fetch(`${api}/post/trending`, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          credentials: "include",
+        });
+        let data = await res.json();
+        setUsername(data.data.username);
+        setPosts(data.data.posts);
+      })();
+    } catch (e) {
+      console.log(e);
+    }
   }, [navigate]);
 
   return (

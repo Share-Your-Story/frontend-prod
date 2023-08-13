@@ -1,7 +1,7 @@
 .nav {
   display: flex;
   flex-direction: column;
-  padding: 10px 0px 10px 20px;
+  padding: 10px 0px 0px 20px;
   border-right: 1px solid #676767;
 }
 .nav > .logo {
@@ -9,6 +9,16 @@
   width: 70px;
   cursor: pointer;
   margin-bottom: 10px;
+}
+
+.nav > .credits {
+  margin: auto 0px 0px 0px;
+  text-align: left;
+  font-size: 14px;
+}
+.nav > .credits > div > a {
+  text-decoration: underline;
+  color: #6b42ff;
 }
 
 @media only screen and (max-width: 768px) {
@@ -19,5 +29,8 @@
     height: 60px;
     width: 60px;
     margin-left: -11px;
+  }
+  .nav > .credits > .creator {
+    display: none;
   }
 }
