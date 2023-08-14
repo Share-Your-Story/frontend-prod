@@ -13,7 +13,7 @@ const Nav = () => {
       <NavItem name="account" />
       <div className="credits">
         <div className="creator">
-          <a href="https://github.com/AayushMainali-Github">Creator</a>
+          <a href="https://github.com/Share-Your-Story/frontend-prod">Source</a>
         </div>
         <div className="icons">
           <a href="https://icons8.com/">Icons</a>
